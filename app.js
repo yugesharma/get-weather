@@ -16,5 +16,39 @@ const apiKey="5431cea4928259758e577c8cd26f641d";
                     var data=await response.json();
 
                 console.log(data);
+
+                document.querySelector(".city").innerHTML=data.name;
+                document.querySelector(".temp").innerHTML=Math.round(data.main.temp)+' °C';
+                document.querySelector(".humidity").innerHTML=data.main.humidity+' %';
+                document.querySelector(".wind").innerHTML=data.wind.speed+' km/hr';
+
+                weatherInfo=data.weather[0].main;
+                
+                
+                document.querySelector(".weather").style.display="block";
+                document.querySelector(".error").style.display="none";
+
+                
+
                 }
+                
             }
+
+            searchBtn.addEventListener("click", ()=>{
+                checkWeather(searchBox.value);
+            })
+
+            var books=document.querySelector('#book-list li .name');
+            books=document.querySelectorAll('#book-list li .name')
+
+            Array.from(books).forEach(function(book){
+                console.log(book);
+            })
+
+            var btns=document.querySelectorAll('#book-list .delete');
+
+            Array.from(btns).forEach(function(btn){
+                btn.addEvent
+            })
+
+            
